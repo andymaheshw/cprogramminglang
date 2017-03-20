@@ -1,29 +1,29 @@
 #include <stdio.h>
-#define MAXLINE 1000
-int getline1(char s[], int lim);
-/* GET LINE IS BROKEN, SO CHANGED TO GETLINE1 */
+#define MAXLINE 5
+int getline(int s[], int lim);
+/*
 void copy(char to[], char from[]);
-
+*/
 int main()
 {
     int len;
     int max;
-    char line[MAXLINE];
-    char longest[MAXLINE];
+    int line[MAXLINE];
+    int longest[MAXLINE];
 
     max = 0;
-    while ((len = getline1(line, MAXLINE)) > 0)
+    while ((len = getline(line, MAXLINE)) > 0)
         if (len > max)
         {
             max = len;
-            copy(longest, line);
+            //copy(longest, line);
         }
         if (max > 0)
             printf("%s", longest);
         return 0;
 }
 
-int getline1(char s[], int lim)
+int getline(int s[], int lim)
 {
     int c, i;
 
@@ -37,7 +37,7 @@ int getline1(char s[], int lim)
     s[i] = '\0';
     return i;
 }
-
+/*
 void copy(char to[], char from[])
 {
     int i;
@@ -45,4 +45,4 @@ void copy(char to[], char from[])
     while ((to[i] = from[i]) != '\0')
         ++i;
 }
-
+*/

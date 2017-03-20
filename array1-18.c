@@ -10,7 +10,8 @@ int main()
     int max;
     char line[MAXLINE];
     char longest[MAXLINE];
-
+    int k;
+    k = 5;
     max = 0;
     while ((len = getline1(line, MAXLINE)) > 0)
         if (len > max)
@@ -18,8 +19,10 @@ int main()
             max = len;
             copy(longest, line);
         }
-        if (max > 0)
-            printf("%s", longest);
+    if (max > 0)
+        printf("%s", longest);
+        printf("SIZE %d", max);
+
         return 0;
 }
 
@@ -29,6 +32,10 @@ int getline1(char s[], int lim)
 
     for (i = 0; i < lim-1 && (c=getchar()) != EOF && c!= '\n'; ++i)
         s[i] = c;
+    if(s[i-1] == ' ' || s[i-1] == '\t')
+    {
+        --i;
+    }
     if (c == '\n')
     {
         s[i] = c;
