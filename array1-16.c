@@ -38,6 +38,7 @@ int getline1(char s[], int lim)
         ++i;
     }
     s[i] = '\0';
+    printf("LINE %s", s);
     return i;
 }
 

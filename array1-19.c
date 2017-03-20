@@ -43,7 +43,6 @@ void copy(char to[], char from[], int len)
     j = 0;
     for(i = len; i >= 0; --i)
     {
-        printf("\n %d, %c, %d, %c", i, from[i], j, to[i]);
         to[j] = from[i];
         ++j;
     }
