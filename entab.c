@@ -29,7 +29,7 @@ int get_line(char s[])
             {
                 printf(" \nENTERED");
                 ++k;
-                s[k] = 'Z';
+                s[k] = '    ';
                 count_space = 0;
             }
         }
