@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define MAXLINE 1000
 
 int expand(char s1[], char s2[]);
@@ -12,10 +13,10 @@ char s1[MAXLINE];
 char s2[MAXLINE];
 
 s1_len = get_line(s1, MAXLINE);
-s2_len = get_line(s2, MAXLINE);
 
-printf(" %c", 69);
-//expand(s1, s2);
+
+expand(s1, s2);
+printf(" %s", s2);
 }
 
 int get_line(char line[], int maxline){
@@ -33,18 +34,17 @@ int expand(char s1[], char s2[]) {
   int i = 0;
   int j = 0;
   int s2_position = 0;
-  bool synced = true;
   for(i = 0; i < strlen(s1); ++i)
   {
     if (s1[i] == '-')
     {
-        for(j = 0; j < s1[i+1]-s2[i-1]; ++j)
+        for(j = 0; j < s1[i+1]-s2[i-1]+1; ++j)
         {
-
+            s2[s2_position] = s1[i-1]+j;
+            s2_position++;
+            //printf("s2 VALUE %s", s2);
         }
     }
-    else if (sycned) {
-        s2_position = i;
-    }
   }
+  return 0;
 }
