@@ -33,6 +33,11 @@ unsigned setbits(unsigned x, int p, int n, unsigned y)
     return a | b;
 }
 
+unsigned invert(x, p, n)
+{
+    int mid = ((x >> (p + 1-n)) & ~( ~ 0 << n));
+
+}
 
 // This should probably do something about the values at the top of the range.
 unsigned rightrot( x, n)
